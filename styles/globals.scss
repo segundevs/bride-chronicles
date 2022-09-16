@@ -1,0 +1,12 @@
+@import "./styles/utils/variables";
+@import "./styles/base/reset";
+
+@import "./styles/utils/breakpoints";
+
+
+@import "./styles/components/header";
+@import "./styles/components/card";
+
+
+@import "./styles/pages/home";
+@import "./styles/pages/details";

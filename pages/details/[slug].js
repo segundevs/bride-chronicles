@@ -42,26 +42,26 @@ const Details = ({ data, slug }) => {
         <p className="social_text">Enjoyed it? Please share</p>
         <div className="social_icons">
           <FacebookShareButton
-            url={`https://bride-chronicles.vercel.app/${slug}`}
+            url={`https://bride-chronicles.vercel.app/details/${slug}`}
             quote={quote}
           >
             <FacebookIcon size={32} round />
           </FacebookShareButton>
           <TelegramShareButton
-            url={`https://bride-chronicles.vercel.app/${slug}`}
+            url={`https://bride-chronicles.vercel.app/details/${slug}`}
             title={title}
           >
             <TelegramIcon size={32} round />
           </TelegramShareButton>
           <TwitterShareButton
-            url={`https://bride-chronicles.vercel.app/${slug}`}
+            url={`https://bride-chronicles.vercel.app/details/${slug}`}
             title={title}
           >
             <TwitterIcon size={32} round />
           </TwitterShareButton>
 
           <WhatsappShareButton
-            url={`https://bride-chronicles.vercel.app/${slug}`}
+            url={`https://bride-chronicles.vercel.app/details/${slug}`}
             title={title}
             separator=":: "
           >

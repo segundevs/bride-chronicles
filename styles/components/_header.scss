@@ -1,9 +1,9 @@
 header {
   h1 {
-    font-family: "Combo", sans-serif;
     text-align: center;
     width: 80%;
     margin: 40px auto;
+    font-size: 22px;
     
     @include md {
       font-size: 45px;
@@ -11,35 +11,9 @@ header {
     }
 
     span {
-      font-family: "Poppins", sans-serif;
+      font-family: "Combo", sans-serif;
       color: red;
     }
-
-    animation-name: bounce;
-    animation-timing-function: linear;
-    animation-duration: 2.8s;
-    animation-iteration-count: infinite;
   }
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-
-  25% {
-    transform: translateY(-5px);
-  }
-
-  50% {
-    transform: translateY(0);
-  }
-
-  75% {
-    transform: translateY(5px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}

@@ -11,7 +11,7 @@ const Card = ({ item }) => {
   return (
     <div className="card_container">
       <div className="img_container">
-        <Image src={`https://${item?.fields?.thumbnail?.fields?.file?.url}`} alt={item.fields.title} height={300} width={300}  className="event-img" />
+        <img src={`https://${item?.fields?.thumbnail?.fields?.file?.url}`} alt={item.fields.title} className="event-img" />
       </div>
       <h4 className='date'>{date}</h4>
       <div className="event-details">

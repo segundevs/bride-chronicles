@@ -1,5 +1,7 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { useRouter } from "next/router";
+import { BsArrowLeft } from "react-icons/bs";
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -11,13 +13,17 @@ import {
   WhatsappIcon,
 } from "next-share";
 
-const Details = ({ data }) => {
+const Details = ({ data, slug }) => {
   const { content, title, excerpt, author, quote } = data;
 
   const date = data?.date.split("T")[0].split("-").reverse().join("-");
+  const router = useRouter();
 
   return (
     <div className="details">
+      <div className="back" onClick={() => router.push("/")}>
+        <BsArrowLeft />
+      </div>
       <h2>{title}</h2>
       <p className="excerpt">{excerpt}</p>
       <div className="details_img">
@@ -36,26 +42,26 @@ const Details = ({ data }) => {
         <p className="social_text">Enjoyed it? Please share</p>
         <div className="social_icons">
           <FacebookShareButton
-            url={"https://github.com/next-share"}
+            url={`https://bride-chronicles.vercel.app/${slug}`}
             quote={quote}
           >
             <FacebookIcon size={32} round />
           </FacebookShareButton>
           <TelegramShareButton
-            url={"https://github.com/next-share"}
+            url={`https://bride-chronicles.vercel.app/${slug}`}
             title={title}
           >
             <TelegramIcon size={32} round />
           </TelegramShareButton>
           <TwitterShareButton
-            url={"https://github.com/next-share"}
+            url={`https://bride-chronicles.vercel.app/${slug}`}
             title={title}
           >
             <TwitterIcon size={32} round />
           </TwitterShareButton>
 
           <WhatsappShareButton
-            url={"https://github.com/next-share"}
+            url={`https://bride-chronicles.vercel.app/${slug}`}
             title={title}
             separator=":: "
           >
@@ -87,6 +93,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data: res?.items[0].fields,
+      slug: slug,
     },
   };
 }

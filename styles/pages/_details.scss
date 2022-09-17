@@ -7,6 +7,17 @@
     width: 60%;
   }
 
+  .back {
+    background-color: $background-color;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
   &_content {
     margin-top: 10px;
     margin-bottom: 40px;

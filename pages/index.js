@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 export default function Home({ data }) {
   return (
-    <div className="container">
+    <div className="app_container">
       <Head>
         <title>Engaged Living</title>
         <meta name="description" content="The PRADA '22 love story" />

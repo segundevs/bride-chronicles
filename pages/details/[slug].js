@@ -1,7 +1,6 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import DisqusComments from "../../components/Comments";
 import { BsArrowLeft } from "react-icons/bs";
 import {

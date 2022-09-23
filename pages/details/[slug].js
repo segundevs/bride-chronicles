@@ -1,6 +1,8 @@
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import DisqusComments from "../../components/Comments";
 import { BsArrowLeft } from "react-icons/bs";
 import {
   FacebookShareButton,
@@ -13,7 +15,7 @@ import {
   WhatsappIcon,
 } from "next-share";
 
-const Details = ({ data, slug }) => {
+const Details = ({ data, id, slug }) => {
   const { content, title, excerpt, author, quote } = data;
 
   const date = data?.date.split("T")[0].split("-").reverse().join("-");
@@ -27,9 +29,10 @@ const Details = ({ data, slug }) => {
       <h2>{title}</h2>
       <p className="excerpt">{excerpt}</p>
       <div className="details_img">
-        <img
+        <Image
           src={`https://${data?.featuredImage?.fields?.file?.url}`}
           alt={title}
+          layout="fill"
         />
       </div>
       <div className="details_content">
@@ -69,6 +72,7 @@ const Details = ({ data, slug }) => {
           </WhatsappShareButton>
         </div>
       </div>
+      <DisqusComments id={id?.sys?.id} title={title} slug={slug} />
     </div>
   );
 };
@@ -92,7 +96,8 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      data: res?.items[0].fields,
+      data: res?.items[0]?.fields,
+      id: res?.items[0],
       slug: slug,
     },
   };

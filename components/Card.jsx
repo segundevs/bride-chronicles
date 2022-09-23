@@ -11,7 +11,11 @@ const Card = ({ item }) => {
   return (
     <div className="card_container">
       <div className="img_container">
-        <img src={`https://${item?.fields?.thumbnail?.fields?.file?.url}`} alt={item.fields.title} className="event-img" />
+        <Image 
+          src={`https://${item?.fields?.thumbnail?.fields?.file?.url}`} 
+          alt={item.fields.title} 
+          layout="fill"
+        />
       </div>
       <h4 className='date'>{date}</h4>
       <div className="event-details">

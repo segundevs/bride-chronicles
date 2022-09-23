@@ -29,10 +29,9 @@ const Details = ({ data, id, slug }) => {
       <h2>{title}</h2>
       <p className="excerpt">{excerpt}</p>
       <div className="details_img">
-        <Image
+        <img
           src={`https://${data?.featuredImage?.fields?.file?.url}`}
           alt={title}
-          layout="fill"
         />
       </div>
       <div className="details_content">

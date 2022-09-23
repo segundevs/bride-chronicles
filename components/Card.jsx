@@ -1,5 +1,3 @@
-import React from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 
@@ -11,11 +9,7 @@ const Card = ({ item }) => {
   return (
     <div className="card_container">
       <div className="img_container">
-        <Image 
-          src={`https://${item?.fields?.thumbnail?.fields?.file?.url}`} 
-          alt={item.fields.title} 
-          layout="fill"
-        />
+        <img src={`https://${item?.fields?.thumbnail?.fields?.file?.url}`} alt={item.fields.title} className="event-img" />
       </div>
       <h4 className='date'>{date}</h4>
       <div className="event-details">

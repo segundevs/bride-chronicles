@@ -30,7 +30,7 @@ export async function getServerSideProps() {
     accessToken: process.env.ACCESS_TOKEN,
   });
 
-  const res = await client.getEntries({ content_type: "wedding" });
+  const res = await client.getEntries({ content_type: "bridalChronicles" });
 
   return {
     props: {

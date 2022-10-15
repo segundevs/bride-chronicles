@@ -14,7 +14,7 @@ const Card = ({ item }) => {
       <h4 className='date'>{date}</h4>
       <div className="event-details">
         <h2>{item.fields.title}</h2>
-        <h4><span>{item.fields.excerpt}</span></h4>
+        <p>{item.fields.excerpt.substring(0, 80)}...</p>
         <div className="card_footer">
           <span>
             <strong>Author: </strong> 

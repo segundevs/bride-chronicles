@@ -1,9 +1,9 @@
 import {DiscussionEmbed} from "disqus-react";
 
 const DisqusComments = ({ id, title, slug }) => {
-  const disqusShortname = "blissdavid"
+  const disqusShortname = "blisspraise"
   const disqusConfig = {
-    url: `https://bride-chronicles.vercel.app/details/${slug}`,
+    url: `https://engagedliving.vercel.app/details/${slug}`,
     identifier: id,
     title: title
   }

@@ -49,7 +49,11 @@
       color: $btn-bg;
       position: absolute;
       right: 10px;
-      bottom: 10px;
+      bottom: 2px;
+
+      @include md {
+        bottom: 10px;
+      }
     }
 
     h4 {
